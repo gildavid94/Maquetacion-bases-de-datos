@@ -1,0 +1,34 @@
+Proceso GenerarNombreUsuario
+    Definir nombre, personaje_favorito, nombre_final Como Cadena
+    Definir option, option2, number Como Entero
+    
+    Escribir "¡Bienvenido al generador de nombres de jugador de GameByte Store!"
+    Escribir "Ingresa tu nombre:"
+    Leer nombre
+    
+    Escribir "Ingresa el nombre de tu personaje de videojuego favorito:"
+    Leer personaje_favorito
+    
+    // Ahora generamos el nombre final del jugador
+    Escribir "Elige un estilo para tu nombre de jugador:"
+    Escribir "1. Fusionar ambos nombres"
+    Escribir "2. Agregar un número deseado"
+	Leer option
+	
+    Si option = 1 Entonces
+		nombre_final = Subcadena(nombre,0,3) + Subcadena(personaje_favorito,1,4)
+	SiNo
+		Escribir "¿Qué orden desea para la combinación?"
+		Escribir "1. nombre + personaje"
+		Escribir "2. personaje + nombre"
+		Leer option2
+		Escribir "Digite el número deseado: "
+		Leer number
+		Si option2 = 1 Entonces
+			nombre_final = Subcadena(nombre,0,3) + Subcadena(personaje_favorito,1,4)
+		SiNo
+			nombre_final = Subcadena(personaje_favorito,0,4) + Subcadena(nombre,1,3)
+		FinSi
+	Fin Si
+	Escribir "Su nombre de jugador es: " nombre_final number
+FinProceso
